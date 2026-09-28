@@ -1,0 +1,70 @@
+/* Visible commands only. Scene hit areas, artwork and drag handles keep their silhouettes. */
+:is(body>header nav button,#alley-enter,#alley-skip,#alley-retry,#sheet-actions button,
+#close-sheet,#speech-actions button,.mirror-actions button,.workshop-actions button,
+#take-abacus-items,#return-cabinet-item,#inspection-close-receipt,#inspection-close-cabinet,
+#use-receipt,#letter,#skip-handover,#skip-banquet,.banquet-finish button,#hint-actions button,
+#scene-load button,#lamp-controls button,#puppet-controls button,#shadow-controls button){
+ --control-bg:#28221bec;--control-ink:#ead2ad;--control-edge:#93704b;
+ --control-hover:#3b2c20;--control-inner:#d1a36a24;
+ min-height:44px;min-width:44px;padding:7px 14px;
+ border:1px solid var(--control-edge);border-radius:2px;
+ background:var(--control-bg);color:var(--control-ink);
+ box-shadow:inset 0 0 0 2px #18151066,inset 0 0 0 3px var(--control-inner),0 2px 0 #100e0b38;
+ font-family:inherit;font-weight:400;line-height:1.35;letter-spacing:.09em;
+ text-shadow:none;transition:background-color .14s,border-color .14s,color .14s;
+}
+/* Commands on paper use the same carved border with an ink-on-paper treatment. */
+:is(#sheet-actions button,#close-sheet,.workshop-actions button,#take-abacus-items,
+#return-cabinet-item,#inspection-close-receipt,#inspection-close-cabinet,#use-receipt,#letter){
+ --control-bg:#e4cca4;--control-ink:#4c2b20;--control-edge:#976647;
+ --control-hover:#f0d9b5;--control-inner:#90542c30;
+ box-shadow:inset 0 0 0 2px #f4e2c966,inset 0 0 0 3px var(--control-inner),0 2px 0 #22170d30;
+}
+#alley-enter{--control-bg:#803323;--control-ink:#f3dfbd;--control-edge:#c18b5e;--control-hover:#994330}
+/* Preserve the existing navigation anchors and arrow proportions. */
+:is(#back,.turn,#close-speech){
+ --control-bg:#201c17db;--control-ink:#e9d0aa;--control-edge:#9f795277;--control-hover:#3a2b20;
+ min-width:44px;min-height:44px;padding:0;border:1px solid var(--control-edge);border-radius:2px;
+ background:var(--control-bg);color:var(--control-ink);text-shadow:none;
+ box-shadow:inset 0 0 0 2px #17151055,inset 0 0 0 3px #bd8d5520;
+ transition:background-color .14s,border-color .14s,color .14s;
+}
+#stage #back{width:44px;height:44px;font-size:26px;line-height:1}
+#close-speech{font-size:24px;line-height:1}
+/* Only controls carrying the palette above receive interactive states. */
+@media(hover:hover){
+ :is(body>header nav button,#alley-enter,#alley-skip,#alley-retry,#sheet-actions button,
+ #close-sheet,#speech-actions button,.mirror-actions button,.workshop-actions button,
+ #take-abacus-items,#return-cabinet-item,#inspection-close-receipt,#inspection-close-cabinet,
+ #use-receipt,#letter,#skip-handover,#skip-banquet,.banquet-finish button,#hint-actions button,
+ #scene-load button,#lamp-controls button,#puppet-controls button,#shadow-controls button,
+ #back,.turn,#close-speech):hover:not(:disabled){background:var(--control-hover);border-color:#c49a6b;filter:none}
+}
+:is(body>header nav button,#alley-enter,#alley-skip,#alley-retry,#sheet-actions button,
+#close-sheet,#speech-actions button,.mirror-actions button,.workshop-actions button,
+#take-abacus-items,#return-cabinet-item,#inspection-close-receipt,#inspection-close-cabinet,
+#use-receipt,#letter,#skip-handover,#skip-banquet,.banquet-finish button,#hint-actions button,
+#scene-load button,#lamp-controls button,#puppet-controls button,#shadow-controls button,
+#back,.turn,#close-speech):focus-visible{outline:2px solid #e4b875;outline-offset:3px;filter:none}
+:is(body>header nav button,#alley-enter,#alley-skip,#alley-retry,#sheet-actions button,
+#close-sheet,#speech-actions button,.mirror-actions button,.workshop-actions button,
+#take-abacus-items,#return-cabinet-item,#inspection-close-receipt,#inspection-close-cabinet,
+#use-receipt,#letter,#skip-handover,#skip-banquet,.banquet-finish button,#hint-actions button,
+#scene-load button,#lamp-controls button,#puppet-controls button,#shadow-controls button,
+#back,.turn,#close-speech):disabled{opacity:.45;cursor:default;box-shadow:none;filter:none}
+@media(max-width:650px){
+ :is(body>header nav button,#speech-actions button,.mirror-actions button,.workshop-actions button,
+ .banquet-finish button,#hint-actions button,#sheet-actions button){padding:6px 8px;letter-spacing:.04em}
+ #alley-skip,#alley-enter,#alley-retry{padding:7px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+ :is(body>header nav button,#alley-enter,#alley-skip,#alley-retry,#sheet-actions button,
+ #close-sheet,#speech-actions button,.mirror-actions button,.workshop-actions button,
+ #take-abacus-items,#return-cabinet-item,#inspection-close-receipt,#inspection-close-cabinet,
+ #use-receipt,#letter,#skip-handover,#skip-banquet,.banquet-finish button,#hint-actions button,
+ #scene-load button,#lamp-controls button,#puppet-controls button,#shadow-controls button,
+ #back,.turn,#close-speech){transition:none}
+}
+/* Keep directional controls compact without changing their hit target. */
+#stage .turn{width:44px;height:64px;top:calc(50% - 32px);font-size:36px}
+#stage .turn.left{left:8px}#stage .turn.right{right:8px}

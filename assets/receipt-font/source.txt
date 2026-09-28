@@ -1,0 +1,4 @@
+Ma Shan Zheng, Google Fonts, SIL OFL
+https://github.com/google/fonts/tree/main/ofl/mashanzheng
+Google Fonts character-subset endpoint:
+https://fonts.gstatic.com/l/font?kit=NaPecZTRCLxvwo41b4gvzkXaRMT0Smjr5lggLIaEfxw1HJoZCav17YA7hxKOIhb2f9i4lH3Z_MeP0fXYZFh7nGnVHmfIg0IBGtYpJ_LFK1B7F2JIcn4V5A&skey=13c999d73b164fc8&v=v18
